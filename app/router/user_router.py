@@ -60,20 +60,23 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
     "/get_id/{mail}",
     tags=["users"]
     )
-def get_rol(mail : str):
+def get_rol_de_usuario(mail : str):
     return user_service.get_rol(mail)
 
 @router.get(
     "/get_nombre/{mail}",
     tags=["users"]
     )
-def get_nombre(mail : str):
+def get_nombre_de_usuario(mail : str):
     return user_service.get_nombre(mail)
 
 
 @router.get(
-    "/usuarios2/",
+    "/usuarios/",
     tags=["users"]
     )
-def read_items():
+def Get_Lista_de_usuarios():
+    """
+    El servicio devuelve lista de usuarios
+    """
     return user_service.get_usuarios()

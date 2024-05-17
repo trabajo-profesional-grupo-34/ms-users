@@ -74,7 +74,11 @@ def get_usuarios():
     list_user = []
     
     for user in users :
-        list_user.append(user)
+        vals = {}
+        vals['nombre'] = user.nombre
+        vals['correo'] = user.email
+        vals['rol'] = user.idRol_id
+        list_user.append(vals)
         
     return list_user
 
