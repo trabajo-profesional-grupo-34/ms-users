@@ -65,7 +65,10 @@ def get_nombre(mail : str):
             detail="user not found"
         )
         
-    return user.nombre
+    return {
+        "id": user.id,
+        "nombre": user.nombre
+    }
 
 def get_usuarios():
 
